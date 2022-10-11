@@ -1,6 +1,9 @@
 .banner{
     background-image: url('../../images/banner.svg');
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 500px;
+    background-size: cover;
+    height: 350px;
+}
+.fa-bounce{
+    --fa-animation-duration: 2s;
 }
