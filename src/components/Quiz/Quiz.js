@@ -8,7 +8,6 @@ import './Quiz.css';
 const Quiz = () => {
     const questions = useLoaderData().data.questions;
     const topic = useLoaderData().data;
-    console.log(questions);
     return (
         <div className='mt-5 pt-5'>
             <div className="row">
