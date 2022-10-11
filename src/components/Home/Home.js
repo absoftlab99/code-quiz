@@ -6,7 +6,8 @@ import Subject from '../Subject/Subject';
 const Home = () => {
     const topics = useLoaderData().data;
         return (
-        <div>
+        <div className='mt-5'>
+            <hr className='m-0 text-light'></hr>
             <Banner></Banner>
             <div className="container mt-5">
                 <h1 className='fw-bolder'>Quiz Topics</h1>

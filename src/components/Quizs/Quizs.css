@@ -3,5 +3,8 @@
     font-family: 'Fira Code', monospace;
 }
 .fs{
-    font-size: 18px;
+    font-size: 24px;
+}
+.totka p{
+    display: inline;
 }

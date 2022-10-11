@@ -5,13 +5,12 @@ import './Quizs.css';
 
 const Quizs = (props) => {
     const {options, question} = props.question;
-    console.log(options);
     return (
         <div className=" d-flex justify-content-center">
             <div className='bg-light rounded-5 border w-75 mb-3'>
             <div className="row">
                 <div className="col-11">
-                    <h4 className='pt-4 text-start ps-4 fw-normal fs' dangerouslySetInnerHTML={ {__html: question}}>
+                    <h4 className='pt-4 text-start ps-4 fw-normal fs d-flex totka' dangerouslySetInnerHTML={{__html: `<small>Q-${props.sl+1} ${question}</small>`}}>
                     </h4>
                 </div>
                 <div className="col-1">
@@ -19,13 +18,23 @@ const Quizs = (props) => {
                 </div>
             </div>
             <div className='row question ff-firaCode'>
-                <div className="col-6 p-3 px-5">
-                    <button className='btn btn-warning text-start my-2 w-100'>{options[0]}</button>
-                    <button className='btn btn-warning text-start my-2 w-100'>{options[2]}</button>
-                </div>
-                <div className="col-6 p-3 px-5">
-                    <button className='btn btn-warning text-start my-2 w-100'>{options[1]}</button>
-                    <button className='btn btn-warning text-start my-2 w-100'>{options[3] ?options[3] : 'NaN' }</button>
+                <div className="col-12 p-3 px-5">
+                    <div className="form-check text-start border rounded p-3 bg-warning fs-6 p-0">
+                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                            <label className="form-check-label" htmlFor="flexRadioDefault2">{options[0]}</label>
+                    </div>
+                    <div className="form-check text-start border rounded p-3 bg-warning fs-6">
+                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                            <label className="form-check-label" htmlFor="flexRadioDefault2">{options[1]}</label>
+                    </div>
+                    <div className="form-check text-start border rounded p-3 bg-warning fs-6">
+                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                            <label className="form-check-label" htmlFor="flexRadioDefault2">{options[2]}</label>
+                    </div>
+                    <div className="form-check text-start border rounded p-3 bg-warning fs-6">
+                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                            <label className="form-check-label" htmlFor="flexRadioDefault2">{options[3] ? options[3] : 'NaN'}</label>
+                    </div>
                 </div>
             </div>
         </div>
