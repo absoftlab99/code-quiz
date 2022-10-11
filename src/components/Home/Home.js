@@ -12,7 +12,7 @@ const Home = () => {
                 <h1 className='fw-bolder'>Quiz Topics</h1>
                 <div className="row">
                 {
-                    topics.map( topic => <Subject
+                    topics.map(topic => <Subject
                     key={topic.id}
                     topic={topic}
                     ></Subject>)
