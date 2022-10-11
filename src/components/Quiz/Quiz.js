@@ -16,8 +16,8 @@ const Quiz = () => {
                     <h1>Quiz Topic: <span>{topic.name}</span></h1>
                     <div className="row pt-4 m-0">
                         <div className="">
-                            <h3 className='text-center d-flex justify-content-center'>
-                                <div className="bg-light rounded-5 border w-75">
+                            <h3 className='text-center'>
+                                <div className="container">
                                     {
                                         questions.map(question => <Quizs
                                             key={question.id}
@@ -29,7 +29,7 @@ const Quiz = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-2 big-blue pt-3  text-light fw-bolder">
+                <div className="col-2 big-blue pt-3  text-light fw-bolder fixed">
                     <h5 className=''>Quiz Summary</h5>
                     <hr className=''/>
                     <p className='text-start'><small>Total Quiz: <span>00</span></small></p>
