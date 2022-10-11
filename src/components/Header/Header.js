@@ -6,9 +6,9 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <Navbar bg="primary" expand="md">  
+        <Navbar className='big-blue' expand="md">  
             <Container>  
-            <Navbar.Brand to="/">Navbar Brand</Navbar.Brand>  
+            <Navbar.Brand className='text-light' to="/">Navbar Brand</Navbar.Brand>  
             <Navbar.Toggle aria-controls="basic-navbar-nav" />  
             <Navbar.Collapse id="basic-navbar-nav">  
                 <Nav className="ms-auto menu">

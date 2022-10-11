@@ -1,0 +1,6 @@
+.banner{
+    background-image: url('../../images/banner.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+}
