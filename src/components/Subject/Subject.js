@@ -10,7 +10,7 @@ const Subject = ({topic}) => {
             <Card.Img className='big-blue' variant="top" src={logo}/>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
-                <Card.Text>Total Quistions: {total}</Card.Text>
+                <Card.Text><b>Total Quistions:</b> {total}</Card.Text>
                 <Button className='btn big-blue'>Start Quiz</Button>
             </Card.Body>
             </Card>

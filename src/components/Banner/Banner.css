@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 .banner{
     background-image: url('../../images/banner.svg');
     background-repeat: no-repeat;
@@ -6,4 +7,7 @@
 }
 .fa-bounce{
     --fa-animation-duration: 2s;
+}
+.ff-poppins{
+    font-family: 'Poppins', sans-serif;
 }
