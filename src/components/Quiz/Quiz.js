@@ -62,6 +62,7 @@ const Quiz = () => {
                                             showhide={showhide}
                                             showQAns={showQAns}
                                             saveSelectAns={saveSelectAns}
+                                            selectAns={selectAns}
                                         ></Quizs>)
                                     }
                                 </div>

@@ -39,11 +39,11 @@ const Blog = () => {
                 <div className="p-4 text-start">
                     <h1 className='brandColor'>Blog-2: How does context API work?</h1>
                     <p className='text-justify pt-2'>
-                    <h4>What is Context API?</h4>
+                    <span className='fs-4 fw-bold'>What is Context API?</span><br></br>
                     The React Context API is a way for a React app to effectively produce global variables that can be passed around. This is the alternative to "prop drilling" or moving props from grandparent to child to parent, and so on. Context is also touted as an easier, lighter approach to state management using Redux.<br></br><br></br>
 
-                    Context API is a (kind of) new feature added in version 16.3 of React that allows one to share state across the entire app (or part of it) lightly and with ease.
-                    <h4 className='pt-3'>How it works?</h4>
+                    Context API is a (kind of) new feature added in version 16.3 of React that allows one to share state across the entire app (or part of it) lightly and with ease.<br></br>
+                    <span className='fs-4 fw-bold pt-3'>How it works?</span><br></br>
                     React.createContext() is all you need. It returns a consumer and a provider. Provider is a component that as it's names suggests provides the state to its children. It will hold the "store" and be the parent of all the components that might need that store. Consumer as it so happens is a component that consumes and uses the state. More information can be found on <a href='https://reactjs.org/docs/context.html'>React's documentation page</a> 
                     </p>
                 </div>
@@ -51,7 +51,7 @@ const Blog = () => {
             <div className='container bg-light rounded border mb-4'>
                 <div className="p-4 text-start">
                     <h1 className='brandColor'>Blog-3: What you know about useRef?</h1>
-                    <p className='text-justify pt-2'>
+                    <div className='text-justify pt-2'>
                     <b className='fs-4'>useRef</b> <br></br>
                     <div className="demo">
                         <br />
@@ -72,7 +72,7 @@ const Blog = () => {
                         theme={solarizedDark}
                         showLineNumbers={false}
                         />
-                    </p>
+                    </div>
                     <p className='text-justify'>
                     Essentially, <code>useRef</code> is like a “box” that can hold a mutable value in its <code>.current</code> property.<br></br><br></br>
 

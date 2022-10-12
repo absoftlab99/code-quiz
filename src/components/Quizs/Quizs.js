@@ -3,9 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './Quizs.css';
 
-const Quizs = ({ques, sl, showhide, showQAns, saveSelectAns}) => {
+const Quizs = ({ques, sl, showhide, showQAns, saveSelectAns, selectAns}) => {
     const {id, options, question, correctAnswer} = ques;
+    console.log(options);
     const isSow = showhide.find(sid => sid ===id );
+    const myans = selectAns.filter(qid => qid.id === id);
+    let opt;
+    if(myans[0]){
+        opt = myans[0].ans;
+    }
     return (
         <div className=" d-flex justify-content-center">
         <div className='bg-light rounded-5 border w-75 mb-3'>
@@ -21,29 +27,21 @@ const Quizs = ({ques, sl, showhide, showQAns, saveSelectAns}) => {
                 </div>
             </div>
             <div className='row question ff-firaCode'>
-                <div className="col-12 p-3 px-5">
-                    <div className="form-check text-start border rounded p-3 bg-warning fs-6 d-flex option" onClick={()=>saveSelectAns(id,options[0])}>
-                        <input className="form-check-input m-0" type="radio" name="flexRadioDefault" id={options[0]}></input>
-                        <label className="form-check-label ps-2 ps-2" htmlFor={options[0]}>{options[0]}</label>
-                    </div>
-                    <div className="form-check text-start border rounded p-3 bg-warning fs-6 d-flex option" onClick={()=>saveSelectAns(id,options[1])}>
-                        <input className="form-check-input m-0" type="radio" name="flexRadioDefault" id={options[1]}/>
-                        <label className="form-check-label ps-2" htmlFor={options[1]}>{options[1]}</label>
-                    </div>
-                    <div className="form-check text-start border rounded p-3 bg-warning fs-6 d-flex option" onClick={()=>saveSelectAns(id,options[2])}>
-                        <input className="form-check-input m-0" type="radio" name="flexRadioDefault" id={options[2]}/>
-                        <label className="form-check-label ps-2" htmlFor={options[2]}>{options[2]}</label>
-                    </div>
-                    <div className="form-check text-start border rounded p-3 bg-warning fs-6 d-flex option" onClick={()=>saveSelectAns(id,options[3])}>
-                        <input className="form-check-input m-0" type="radio" name="flexRadioDefault" id={id}/>
-                        <label className="form-check-label ps-2" htmlFor={id}>{options[3] ? options[3] : 'NaN'}</label>
-                    </div>
-                </div>
+                {
+                    options.map(option =>
+                        <div className="col-12 p-1 px-5">
+                            <div className={`form-check text-start border rounded p-3 fs-6 d-flex option  ${opt === option ? 'big-blue text-light' : 'bg-warning'}`} onClick={()=>saveSelectAns(id,option)}>
+                                <input className="form-check-input m-0" type="radio" name="flexRadioDefault" id={option}></input>
+                                <label className="form-check-label ps-2 ps-2" htmlFor={option}>{option}</label>
+                            </div>
+                        </div>
+                    )
+                }
             </div>
             <div className={`row ${isSow ? 'currently' : 'd-none'}`}>
             <div className="col-12">
                 <p id='show-hide' className='big-blue mx-5 p-3 rounded text-light'>
-                    <small>Correct Answer:{correctAnswer}</small>
+                    <small className='fs-5'>Correct Answer: {correctAnswer}</small>
                 </p>
             </div>
         </div>
