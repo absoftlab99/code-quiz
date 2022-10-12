@@ -6,7 +6,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [https://hero-club.netlify.app](https://hero-club.netlify.app)
 
 ## Technologies
-***
 A list of technologies used within the project:
 * [React](https://reactjs.org/): v18.2.0 
 * [React Router](https://reactrouter.com/): v6.4.2
