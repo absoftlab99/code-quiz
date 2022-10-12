@@ -5,6 +5,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Live Link
 [https://hero-club.netlify.app](https://hero-club.netlify.app)
 
+## Technologies
+***
+A list of technologies used within the project:
+* [React](https://reactjs.org/): v18.2.0 
+* [React Router](https://reactrouter.com/): v6.4.2
+* [React Bootstrap](https://react-bootstrap.github.io/): v2.5.0
+
 ## Available Scripts
 
 In the project directory, you can run:
