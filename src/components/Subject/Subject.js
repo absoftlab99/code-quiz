@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Subject = ({topic}) => {
     const {id, name, logo, total} = topic;
     return (
-        <div className="col-3 mt-4">
+        <div className="col-sm-12 col-md-6 col-lg-3 mt-4">
             <Card className='shadow-lg'>
             <Card.Img className='big-blue' variant="top" src={logo}/>
             <Card.Body>
