@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './Quizs.css';
 
-const Quizs = ({ques, sl, showhide, showQAns, saveSelectAns, selectAns}) => {
+const Quizs = ({ques, sl, showHide, showQAns, saveSelectAns, selectAns}) => {
     const {id, options, question, correctAnswer} = ques;
     console.log(options);
-    const isShow = showhide.find(sid => sid ===id );
+    const isShow = showHide.find(ShowId => ShowId ===id );
     const myans = selectAns.filter(qid => qid.id === id);
     let opt;
     if(myans[0]){

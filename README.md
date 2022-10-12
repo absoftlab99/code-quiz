@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Description
+This project was created for Programming-hero Batch - 6, Assignment 9. This project has some features for quiz-related Educational Websites. In This project, we loaded some topics from API, some quizzes for this topic, and a statistics chart for the topic and quiz.
+
 ## Live Link
 [https://code-quizs.netlify.app/](https://code-quizs.netlify.app/)
 

@@ -15,15 +15,15 @@ const Quiz = () => {
     const questions = useLoaderData().data.questions;
     const totalQuis = useLoaderData().data.total;
     const topic = useLoaderData().data;
-    const [showhide, setShowhide] = useState([]);
+    const [showHide, setshowHide] = useState([]);
     const showQAns = (id)=>{
-        const isShow = showhide.find(sid => sid ===id );
+        const isShow = showHide.find(ShowId => ShowId ===id );
         if(isShow){
-            const newShow = showhide.filter(sid => sid !== id);
-            setShowhide(newShow);
+            const newShow = showHide.filter(ShowId => ShowId !== id);
+            setshowHide(newShow);
         }else{
-            const newShow = [...showhide,id];
-            setShowhide(newShow);
+            const newShow = [...showHide,id];
+            setshowHide(newShow);
         }
     }
 
@@ -61,7 +61,7 @@ const Quiz = () => {
                                             key={ques.id}
                                             ques={ques}
                                             sl={sl}
-                                            showhide={showhide}
+                                            showHide={showHide}
                                             showQAns={showQAns}
                                             saveSelectAns={saveSelectAns}
                                             selectAns={selectAns}
