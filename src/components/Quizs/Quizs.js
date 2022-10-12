@@ -29,11 +29,8 @@ const Quizs = ({ques, sl, showHide, showQAns, saveSelectAns, selectAns}) => {
             <div className='row question ff-firaCode'>
                 {
                     options.map(option =>
-                        <div className="col-12 p-1 px-5">
-                            <div className={`form-check text-start border rounded p-3 fs-6 d-flex option  ${opt === option ? 'big-blue text-light' : 'bg-warning'}`} onClick={()=>saveSelectAns(id,option)}>
-                                <input className="form-check-input m-0" type="radio" name="flexRadioDefault" id={option}></input>
-                                <label className="form-check-label ps-2 ps-2" htmlFor={option}>{option}</label>
-                            </div>
+                        <div className="col-12 p-1 px-5" onClick={()=>saveSelectAns(id,option)}>
+                            <p style={{cursor: 'pointer'}} className={`form-check text-start border rounded p-3 fs-6 d-flex option  ${opt === option ? 'big-blue text-light' : 'bg-warning'}`}>{option}</p>
                         </div>
                     )
                 }
