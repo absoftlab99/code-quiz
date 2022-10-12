@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Live Link
-[https://hero-club.netlify.app](https://hero-club.netlify.app)
+[https://hero-club.netlify.app](https://code-quizs.netlify.app/)
 
 ## Technologies
 A list of technologies used within the project:
