@@ -1,13 +1,50 @@
 import { faCheck, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Quizs from '../Quizs/Quizs';
 import './Quiz.css';
 
 const Quiz = () => {
+    const [selectAns , setSelectAns] = useState([]);
+    const [currectAns, setCurrectAns] = useState(0);
+    const [wrongAns, setWrongAns] = useState(0);
+
     const questions = useLoaderData().data.questions;
+    const totalQuis = useLoaderData().data.total;
     const topic = useLoaderData().data;
+    const [showhide, setShowhide] = useState([]);
+    const showQAns = (id)=>{
+        const isSow = showhide.find(sid => sid ===id );
+        if(isSow){
+            const newShow = showhide.filter(sid => sid !== id);
+            setShowhide(newShow);
+        }else{
+            const newShow = [...showhide,id];
+            setShowhide(newShow);
+        }
+    }
+
+    const saveSelectAns = (id,ans) =>{
+        const myans = selectAns.find(qid => qid.id === id);
+        const getquistions = questions.find(qs => qs.id === id);
+        
+        if(myans){
+            console.log('already added');
+            
+        }else{
+            const newselectAns = [...selectAns,{id : id, ans : ans}];
+            setSelectAns(newselectAns)
+
+            if(ans ===getquistions.correctAnswer){
+                setCurrectAns(currectAns+1);
+                alert('Currect Answer')
+            }else{
+                setWrongAns(wrongAns+1);
+                alert('Wrong Answer')
+            }
+        }  
+    }
     return (
         <div className='mt-5 pt-5'>
             <div className="row">
@@ -18,10 +55,13 @@ const Quiz = () => {
                             <h3 className='text-center'>
                                 <div className="container">
                                     {
-                                        questions.map((question, sl) => <Quizs
-                                            key={question.id}
-                                            question={question}
+                                        questions.map((ques, sl) => <Quizs
+                                            key={ques.id}
+                                            ques={ques}
                                             sl={sl}
+                                            showhide={showhide}
+                                            showQAns={showQAns}
+                                            saveSelectAns={saveSelectAns}
                                         ></Quizs>)
                                     }
                                 </div>
@@ -33,9 +73,9 @@ const Quiz = () => {
                     <div className="big-blue pt-3 p-5 position-fixed end-0">
                         <h5 className=''>Quiz Summary</h5>
                         <hr className=''/>
-                        <p className='text-start'><small>Total Quiz: <span>00</span></small></p>
-                        <p className='text-start'><small>Correct: <span>00 <FontAwesomeIcon icon={faCheck} className='text-success ps-2'></FontAwesomeIcon></span></small></p>
-                        <p className='text-start'><small>Wrong: <span>00 <FontAwesomeIcon icon={faX} className='text-danger ps-2'></FontAwesomeIcon></span></small></p>
+                        <p className='text-start'><small>Total Quiz: <span>{totalQuis}</span></small></p>
+                        <p className='text-start'><small>Correct: <span>{currectAns} <FontAwesomeIcon icon={faCheck} className='text-success ps-2'></FontAwesomeIcon></span></small></p>
+                        <p className='text-start'><small>Wrong: <span>{wrongAns} <FontAwesomeIcon icon={faX} className='text-danger ps-2'></FontAwesomeIcon></span></small></p>
                     </div>
                 </div>
             </div>
