@@ -6,7 +6,7 @@ import './Quizs.css';
 const Quizs = ({ques, sl, showhide, showQAns, saveSelectAns, selectAns}) => {
     const {id, options, question, correctAnswer} = ques;
     console.log(options);
-    const isSow = showhide.find(sid => sid ===id );
+    const isShow = showhide.find(sid => sid ===id );
     const myans = selectAns.filter(qid => qid.id === id);
     let opt;
     if(myans[0]){
@@ -22,7 +22,7 @@ const Quizs = ({ques, sl, showhide, showQAns, saveSelectAns, selectAns}) => {
                 </div>
                 <div className="col-2">
                 <button onClick={()=>showQAns(id)} className='rounded border-0 mt-3 pt-0 bg-light'>
-                    {isSow? <FontAwesomeIcon className='fs-6' icon={faEyeSlash}></FontAwesomeIcon> : <FontAwesomeIcon className='fs-6' icon={faEye}></FontAwesomeIcon>}
+                    {isShow? <FontAwesomeIcon className='fs-6' icon={faEyeSlash}></FontAwesomeIcon> : <FontAwesomeIcon className='fs-6' icon={faEye}></FontAwesomeIcon>}
                 </button>
                 </div>
             </div>
@@ -38,7 +38,7 @@ const Quizs = ({ques, sl, showhide, showQAns, saveSelectAns, selectAns}) => {
                     )
                 }
             </div>
-            <div className={`row ${isSow ? 'currently' : 'd-none'}`}>
+            <div className={`row ${isShow ? 'currently' : 'd-none'}`}>
             <div className="col-12">
                 <p id='show-hide' className='big-blue mx-5 p-3 rounded text-light'>
                     <small className='fs-5'>Correct Answer: {correctAnswer}</small>

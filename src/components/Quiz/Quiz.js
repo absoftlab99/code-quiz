@@ -4,19 +4,21 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Quizs from '../Quizs/Quizs';
 import './Quiz.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Quiz = () => {
     const [selectAns , setSelectAns] = useState([]);
     const [currectAns, setCurrectAns] = useState(0);
     const [wrongAns, setWrongAns] = useState(0);
-
+    const notify = (alert) => toast(alert);
     const questions = useLoaderData().data.questions;
     const totalQuis = useLoaderData().data.total;
     const topic = useLoaderData().data;
     const [showhide, setShowhide] = useState([]);
     const showQAns = (id)=>{
-        const isSow = showhide.find(sid => sid ===id );
-        if(isSow){
+        const isShow = showhide.find(sid => sid ===id );
+        if(isShow){
             const newShow = showhide.filter(sid => sid !== id);
             setShowhide(newShow);
         }else{
@@ -30,7 +32,7 @@ const Quiz = () => {
         const getquistions = questions.find(qs => qs.id === id);
         
         if(myans){
-            console.log('already added');
+            notify('Already Answered! ');
             
         }else{
             const newselectAns = [...selectAns,{id : id, ans : ans}];
@@ -38,10 +40,10 @@ const Quiz = () => {
 
             if(ans ===getquistions.correctAnswer){
                 setCurrectAns(currectAns+1);
-                alert('Currect Answer')
+                notify('Correct Answer! ');
             }else{
                 setWrongAns(wrongAns+1);
-                alert('Wrong Answer')
+                notify('Wrong Answer! ');
             }
         }  
     }
@@ -80,6 +82,7 @@ const Quiz = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
